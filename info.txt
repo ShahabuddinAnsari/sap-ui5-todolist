@@ -1,0 +1,13 @@
+1 TodoList application
+
+Description: 
+Create a simple To-Do List application where users can:
+Add new tasks.
+Mark tasks as completed.
+Delete tasks from the list.
+
+Key Concepts Used:
+JSON data binding.
+List controls (sap.m.List).
+User interaction through buttons and input fields.
+Event handling in controllers.
