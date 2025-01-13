@@ -67,6 +67,7 @@ sap.ui.define(
           .getParameter("listItem")
           .getBindingContext()
           .getProperty("id");
+
         const sTaskMessage = oEvent
           .getParameter("listItem")
           .getBindingContext()
