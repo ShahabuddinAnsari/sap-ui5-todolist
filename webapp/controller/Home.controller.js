@@ -18,11 +18,18 @@ sap.ui.define(
         this.getView().setModel(new JSONModel(oData));
       },
 
-      onAddTask(oEvent) {
+      onAddTask() {
         const taskInput = this.getView().byId("taskInput");
         const inputValue = taskInput.getValue()?.trim();
+        const sEmptyTaskMsg = this.getView()
+          .getModel("i18n")
+          .getResourceBundle()
+          .getText("emptyTaskMsg");
 
-        if (!inputValue) return;
+        if (!inputValue) {
+          this.handleMessageToast(sEmptyTaskMsg);
+          return;
+        }
 
         const oModel = this.getView().getModel();
         const oData = oModel.getData();
