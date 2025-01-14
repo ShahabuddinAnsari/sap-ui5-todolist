@@ -2,9 +2,11 @@ sap.ui.define(
   [
     "sap/ui/demo/todo/controller/BaseController",
     "sap/ui/model/json/JSONModel",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
     "sap/m/MessageToast",
   ],
-  (BaseController, JSONModel, MessageToast) => {
+  (BaseController, JSONModel, Filter, FilterOperator, MessageToast) => {
     "use strict";
 
     return BaseController.extend("sap.ui.demo.todo.controller.TaskList", {
@@ -91,6 +93,23 @@ sap.ui.define(
 
       handleMessageToast(message) {
         MessageToast.show(message);
+      },
+
+      onSearch(oEvent) {
+        const sCurrentInput = oEvent.getSource().getProperty("value")?.trim();
+        const oList = this.byId("taskList");
+        const oBinding = oList.getBinding("items");
+
+        // If no input is provided, remove the filter
+        if (!sCurrentInput) {
+          oBinding.filter([]);
+        }
+
+        const aFilters = [
+          new Filter("title", FilterOperator.Contains, sCurrentInput),
+        ];
+
+        oBinding.filter(aFilters);
       },
     });
   }
