@@ -1,0 +1,26 @@
+<mvc:View
+    controllerName="sap.ui.demo.todo.controller.Home"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>appTitle}">
+        <content>
+            <Input class="sapUiTinyMarginBegin" placeholder="{i18n>inputPlaceHolder}" id="taskInput" width="80%" submit=".onAddTask" />
+            <OverflowToolbar>
+                <SearchField class="sapUiTinyPaddingEnd" liveChange=".onSearch" width="81%" placeholder="" />
+            </OverflowToolbar>
+            <List id="taskList" items="{ path: '/tasks' }" mode="Delete" delete=".onDeleteTaskList">
+                <CustomListItem>
+                    <HBox alignItems="Center">
+                        <CheckBox 
+                            selected="{isCompleted}"
+                            select=".onTaskCheck" />
+                        <Text 
+                            id="taskTitle"
+                            text="{title}"
+                            width="100%" />
+                    </HBox>
+                </CustomListItem>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

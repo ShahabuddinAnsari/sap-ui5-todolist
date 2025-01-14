@@ -3,30 +3,7 @@
 	height="100%"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
-	<App>
-		<pages>
-			<Page title="To Do List">
-				<!-- Input for the new task -->
-				<HBox alignItems="Center">
-					<Input placeholder="Add a new task..." id="taskInput" width="150px" class="sapUiSmallMarginEnd" submit=".onAddTask" />
-					<Button text="Add Task" press=".onAddTask" width="auto"></Button>
-				</HBox>
-
-				<!-- Task List -->
-				<List id="taskList" items="{ path: '/tasks' }" mode="Delete" delete=".onDeleteTaskList">
-					<CustomListItem>
-						<HBox alignItems="Center">
-							<CheckBox 
-								selected="{isCompleted}"
-								select=".onTaskCheck" />
-							<Text 
-								id="taskTitle"
-								text="{title}"
-								width="100%" />
-						</HBox>
-					</CustomListItem>
-				</List>
-			</Page>
-		</pages>
-	</App>
+	<Shell>
+		<App id="app"></App>
+	</Shell>
 </mvc:View>
