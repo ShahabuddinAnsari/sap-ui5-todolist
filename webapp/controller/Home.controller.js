@@ -18,7 +18,7 @@ sap.ui.define(
         this.getView().setModel(new JSONModel(oData));
       },
 
-      onAddTask() {
+      onAddTask(oEvent) {
         const taskInput = this.getView().byId("taskInput");
         const inputValue = taskInput.getValue()?.trim();
 

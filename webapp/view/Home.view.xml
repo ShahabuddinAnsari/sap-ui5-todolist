@@ -6,7 +6,7 @@
         <content>
             <Input class="sapUiTinyMarginBegin" placeholder="{i18n>inputPlaceHolder}" id="taskInput" width="80%" submit=".onAddTask" />
             <OverflowToolbar>
-                <SearchField class="sapUiTinyPaddingEnd" liveChange=".onSearch" width="81%" placeholder="" />
+                <SearchField id="idSearchField" class="sapUiTinyPaddingEnd" liveChange=".onSearch" width="81%" placeholder="" />
             </OverflowToolbar>
             <List id="taskList" items="{ path: '/tasks' }" mode="Delete" delete=".onDeleteTaskList">
                 <CustomListItem>
