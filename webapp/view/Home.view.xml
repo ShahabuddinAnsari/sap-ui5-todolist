@@ -22,5 +22,10 @@
                 </CustomListItem>
             </List>
         </content>
+        <footer>
+            <Toolbar>
+                <Text text="Created by Shahabuddin Ansari"></Text>
+            </Toolbar>
+        </footer>
     </Page>
 </mvc:View>
