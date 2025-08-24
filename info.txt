@@ -11,3 +11,7 @@ JSON data binding.
 List controls (sap.m.List).
 User interaction through buttons and input fields.
 Event handling in controllers.
+
+#Advance features
+Add feature to save the data
+Integrate with oData
